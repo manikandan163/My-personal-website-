@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #141e30, #243b55, #6a11cb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* glowing background */
+    body::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, #6a11cb, transparent 70%);
+      animation: moveGlow 10s linear infinite;
+      opacity: 0.3;
+    }
+
+    @keyframes moveGlow {
+      0% { transform: translate(-25%, -25%); }
+      50% { transform: translate(25%, 25%); }
+      100% { transform: translate(-25%, -25%); }
+    }
+
+    .container {
+      position: relative;
+      background: rgba(255,255,255,0.05);
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 30px rgba(106,17,203,0.6);
+      width: 90%;
+      max-width: 700px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #a855f7;
+      margin-bottom: 20px;
+      text-shadow: 0 0 15px #a855f7;
+      animation: fadeDown 1s ease;
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 15px 0;
+      border: 3px solid #a855f7;
+      box-shadow: 0 0 20px #a855f7;
+      animation: fadeIn 1.5s ease;
+    }
+
+    p {
+      color: #ddd;
+      line-height: 1.6;
+      margin-top: 15px;
+      animation: fadeUp 1.2s ease;
+    }
+
+    /* button */
+    .btn {
+      margin-top: 30px;
+      padding: 12px 25px;
+      border: 2px solid #a855f7;
+      background: transparent;
+      color: #fff;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #a855f7;
+    }
+
+    .btn:hover {
+      background: #a855f7;
+      color: #000;
+      box-shadow: 0 0 20px #a855f7, 0 0 40px #6a11cb;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>About Me</h1>
+
+    <!-- About Text -->
+    <p>
+      Hi, I am Mani 👋<br><br>
+      I am a passionate Web Developer who loves creating modern,
+      animated, and user-friendly websites. I focus on clean design,
+      smooth animations, and premium UI experience.<br><br>
+      I enjoy building creative projects and continuously improving
+      my skills in HTML, CSS, and JavaScript.
+    </p>
+
+    <!-- Back Button -->
+    <a href="index.html">
+      <button class="btn">Back to Home</button>
+    </a>
+
+  </div>
+  <script>
+  function revealOnScroll() {
+    let elements = document.querySelectorAll('.reveal');
+
+    for (let i = 0; i < elements.length; i++) {
+      let windowHeight = window.innerHeight;
+      let elementTop = elements[i].getBoundingClientRect().top;
+      let elementVisible = 100;
+
+      if (elementTop < windowHeight - elementVisible) {
+        elements[i].classList.add("active");
+      }
+    }
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+</script>
+
+</body>
+</html>

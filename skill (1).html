@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Skills</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2ecc71);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* glowing background animation */
+    body::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, #2ecc71, transparent 70%);
+      animation: glowMove 10s linear infinite;
+      opacity: 0.3;
+    }
+
+    @keyframes glowMove {
+      0% { transform: translate(-25%, -25%); }
+      50% { transform: translate(25%, 25%); }
+      100% { transform: translate(-25%, -25%); }
+    }
+
+    .container {
+      position: relative;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 30px rgba(46, 204, 113, 0.6);
+      text-align: center;
+      width: 90%;
+      max-width: 600px;
+    }
+
+    h1 {
+      color: #2ecc71;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-shadow: 0 0 15px #2ecc71;
+      animation: fadeDown 1.2s ease;
+    }
+
+    .skill {
+      margin: 20px 0;
+      text-align: left;
+    }
+
+    .skill span {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .bar {
+      width: 100%;
+      height: 10px;
+      background: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 5px;
+    }
+
+    .bar div {
+      height: 100%;
+      background: linear-gradient(90deg, #2ecc71, #00ffcc);
+      border-radius: 10px;
+      box-shadow: 0 0 15px #2ecc71;
+      animation: load 2s ease forwards;
+    }
+
+    /* animation delays */
+    .html { width: 95%; animation-delay: 0.3s; }
+    .css { width: 90%; animation-delay: 0.6s; }
+    .js { width: 75%; animation-delay: 0.9s; }
+    .ui { width: 80%; animation-delay: 1.2s; }
+
+    @keyframes load {
+      from { width: 0; }
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* button */
+    .btn {
+      margin-top: 30px;
+      padding: 12px 25px;
+      border: 2px solid #2ecc71;
+      background: transparent;
+      color: #fff;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #2ecc71;
+    }
+
+    .btn:hover {
+      background: #2ecc71;
+      color: #000;
+      box-shadow: 0 0 20px #2ecc71, 0 0 40px #00ffcc;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>My Skills</h1>
+
+    <div class="skill">
+      <span>HTML</span>
+      <div class="bar"><div class="html"></div></div>
+    </div>
+
+    <div class="skill">
+      <span>CSS</span>
+      <div class="bar"><div class="css"></div></div>
+    </div>
+
+    <div class="skill">
+      <span>JavaScript</span>
+      <div class="bar"><div class="js"></div></div>
+    </div>
+
+    <div class="skill">
+      <span>UI Design</span>
+      <div class="bar"><div class="ui"></div></div>
+    </div>
+
+    <a href="index.html">
+      <button class="btn">Back Home</button>
+    </a>
+
+  </div>
+
+</body>
+</html>

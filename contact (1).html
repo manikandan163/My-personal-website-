@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #1c3d5a, #00c6ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* glowing animated background */
+    body::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, #00c6ff, transparent 70%);
+      animation: moveGlow 10s linear infinite;
+      opacity: 0.3;
+    }
+
+    @keyframes moveGlow {
+      0% { transform: translate(-25%, -25%); }
+      50% { transform: translate(25%, 25%); }
+      100% { transform: translate(-25%, -25%); }
+    }
+
+    .container {
+      position: relative;
+      background: rgba(255,255,255,0.05);
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 30px rgba(0,198,255,0.6);
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #00c6ff;
+      margin-bottom: 20px;
+      text-shadow: 0 0 15px #00c6ff;
+      animation: fadeDown 1s ease;
+    }
+
+    p {
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    .info {
+      margin: 15px 0;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .info strong {
+      color: #00c6ff;
+    }
+
+    /* buttons */
+    .btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: 2px solid #00c6ff;
+      background: transparent;
+      color: #fff;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #00c6ff;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: #00c6ff;
+      color: #000;
+      box-shadow: 0 0 20px #00c6ff, 0 0 40px #007bff;
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Contact Me</h1>
+
+    <p>Feel free to reach out anytime 👇</p>
+
+    <div class="info"><strong>Phone:</strong> 9047465713</div>
+    <div class="info"><strong>Email:</strong>manikandanthb@gmail.com</div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919047465713" target="_blank">
+      <button class="btn">Send Message on WhatsApp</button>
+    </a>
+
+    <!-- Back Home Button -->
+    <br>
+    <a href="index.html">
+      <button class="btn">Back to Home</button>
+    </a>
+
+  </div>
+
+</body>
+</html>
